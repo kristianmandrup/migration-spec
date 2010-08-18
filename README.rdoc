@@ -1,8 +1,10 @@
-= migration-spec
+# Migration spec
 
-Description goes here.
+RSpec 2 matchers to let you specify expectations for your migration files and/or generators that generate migrations.
 
-== Note on Patches/Pull Requests
+Currently only supports Active Record migrations (are there others!?) 
+
+## Note on Patches/Pull Requests
  
 * Fork the project.
 * Make your feature addition or bug fix.
@@ -12,6 +14,6 @@ Description goes here.
   (if you want to have your own version, that is fine but bump version in a commit by itself I can ignore when I pull)
 * Send me a pull request. Bonus points for topic branches.
 
-== Copyright
+## Copyright
 
 Copyright (c) 2010 Kristian Mandrup. See LICENSE for details.

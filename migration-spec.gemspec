@@ -32,6 +32,7 @@ Gem::Specification.new do |s|
      "lib/migration-spec/matchers/content/have_tbl_column.rb",
      "lib/migration-spec/matchers/content/have_up_down.rb",
      "lib/migration-spec/matchers/generate_migration.rb",
+     "migration-spec.gemspec",
      "spec/migration-spec/fixtures/db/migrations/001_do_columns.rb",
      "spec/migration-spec/fixtures/db/migrations/002_do_index.rb",
      "spec/migration-spec/fixtures/db/migrations/003_do_tables.rb",

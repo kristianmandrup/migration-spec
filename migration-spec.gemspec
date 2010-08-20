@@ -14,14 +14,14 @@ Gem::Specification.new do |s|
   s.email = %q{kmandrup@gmail.com}
   s.extra_rdoc_files = [
     "LICENSE",
-     "README.rdoc"
+     "README.markdown"
   ]
   s.files = [
     ".document",
      ".gitignore",
      ".rspec",
      "LICENSE",
-     "README.rdoc",
+     "README.markdown",
      "Rakefile",
      "VERSION",
      "lib/migration-spec.rb",

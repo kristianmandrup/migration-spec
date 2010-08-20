@@ -1,10 +1,4 @@
-module RSpec::RubyContentMatchers
-  class HaveCall
-    def debug?
-      true
-    end
-  end
-      
+module RSpec::RubyContentMatchers      
   def have_add_tbl_index(tbl_name, index_name)
     have_call 'add_index', :"#{tbl_name}" + '\s*,\s*' + ":#{index_name}"
   end

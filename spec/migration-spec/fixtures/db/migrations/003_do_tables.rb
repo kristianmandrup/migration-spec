@@ -1,4 +1,4 @@
-class DoColumns < ActiveRecord::Migration
+class DoTables < ActiveRecord::Migration
   class << self
     def up
       create_table :users do |t|
@@ -19,9 +19,22 @@ class DoColumns < ActiveRecord::Migration
       t.integer :age
       t.boolean :admin
     end
+
+    change_table :roles do |t|
+      ...
+    end
   end
 
   def self.down
-    drop_table :users  
+    drop_table :users do |t|
+      t.string  :name
+      t.integer :age
+      t.boolean :admin
+    end
+
+    rename_table :roles do |t|
+      ...
+    end
+
   end
 end

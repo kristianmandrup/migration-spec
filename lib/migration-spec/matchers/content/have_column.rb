@@ -2,11 +2,11 @@ module RSpec::RubyContentMatchers
   module ActiveRecord
     module Migration 
       def have_remove_column(name)
-        HaveCall.new('t.remove', ":#{name}")
+        have_call 't.remove', ":#{name}"
       end
 
       def have_add_column(name, type='string')
-        HaveCall.new("t.#{type}", ":#{name}")
+        have_call "t.#{type}", ":#{name}"
       end
       alias_method :have_column, :have_add_column
 
@@ -22,11 +22,11 @@ module RSpec::RubyContentMatchers
       end
 
       def have_change_column(name, type='string')
-        HaveCall.new("t.change", ":#{name}\s*,\s*:#{type}")
+        have_call "t.change", ":#{name}\s*,\s*:#{type}"
       end
 
       def have_timestamps
-        HaveCall.new("t.timestamps")
+        have_call "t.timestamps"
       end
     end
   end

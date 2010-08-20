@@ -1,9 +1,19 @@
-module RSpec::RubyContentMatchers    
+module RSpec::RubyContentMatchers
+  class HaveCall
+    def debug?
+      true
+    end
+  end
+      
   def have_add_tbl_index(tbl_name, index_name)
-    HaveCall.new('add_index', ":#{tbl_name}\s*,\s*:#{index_name}")
+    have_call 'add_index', :"#{tbl_name}" + '\s*,\s*' + ":#{index_name}"
   end
 
-  def have_remove_index(name)
-    HaveCall.new('remove_index', ":#{tbl_name}\s*,\s*:#{index_name}")
+  def have_remove_tbl_index(tbl_name, index_name)
+    have_call 'remove_index', ":#{tbl_name}" + '\s*,\s*' + ":#{index_name}"
+  end
+
+  def have_add_index(name)
+    have_call 't.add_index', ":#{name}"
   end
 end

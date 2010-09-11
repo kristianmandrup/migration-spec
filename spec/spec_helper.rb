@@ -34,7 +34,7 @@ end
 
 RSpec.configure do |config| 
   config.before do                                         
-    rails_root_dir =Rails::Assist::App.rails_root_dir = fixtures_dir #temp_dir('tmp_rails')
+    rails_root_dir = Rails3::Assist::Directory.rails_root = fixtures_dir #temp_dir('tmp_rails')
   end
 
   config.after do

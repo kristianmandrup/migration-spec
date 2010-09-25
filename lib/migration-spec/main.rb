@@ -1,4 +1,4 @@
-require 'rspec'
+require 'rspec/core'
 require 'require_all'
 require 'rails-app-spec'
 require 'active_support/inflector'      

@@ -1,17 +1,26 @@
 require 'rspec/core'
 require 'migration-spec'
-
-# RSpec::Generator.configure do |config|
-#   config.debug = false
-#   config.remove_temp_dir = true
-#   config.default_rails_root(__FILE__) 
-#   config.lib = File.dirname(__FILE__) + '/../lib'
-#   # config.logger = :file # :stdout  
-# end
+require 'generator-spec'
 
 def fixtures_dir
   File.expand_path(File.dirname(__FILE__) + '/migration-spec/fixtures')
 end    
+
+RSpec::Generator.configure do |config|
+  config.debug = false
+  config.remove_temp_dir = true
+  config.rails_root = fixtures_dir
+  config.lib = File.dirname(__FILE__) + '/../lib'
+  # config.logger = :file # :stdout  
+end
+
+
+module Rails
+  def self.root
+    fixtures_dir      
+  end
+end
+
 
 def project_dir
   File.dirname(__FILE__) + '/..'
@@ -42,7 +51,7 @@ RSpec.configure do |config|
    
 end
 
-Rails::Migration::Assist.orm = :active_record 
+Rails3::Migration::Assist.orm = :active_record 
 
 
 
